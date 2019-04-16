@@ -1,0 +1,79 @@
+\documentclass{article}
+
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage[round]{natbib}
+
+% The line below tells R to use knitr on this.
+%\VignetteEngine{knitr::knitr}
+%\VignetteIndexEntry{Sending Messages With Gmailr}
+%\usepackage[utf8]{inputenc}
+
+\title{An R package for Newton's Algorithm}
+\author{Robin Hood \and Maid Marion \and Will Scarlett}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+We present the R package `testpkg', which does some useful things.
+\end{abstract}
+
+\section{Introduction}
+
+Here is a nice description of the background.
+
+Suppose we wish to find the root of the function $f(x) = x^3 - x - 1$, which lies
+between 1 and 2.
+% below is a code chunk. You don't have to give it a name, but if you do
+% it MUST be unique.
+<<chunkname>>=
+library(HW)
+f = function(x) x^3 - x - 1
+uniroot(f, c(-10,10))
+@
+You can do plots and they'll automatically be added to your document.
+<<chunkname2>>=
+plot(f, 1, 2)
+@
+
+\section{A Bit About knitr}
+
+The code chunks you put in don't have to be displayed (and nor does the output),
+if they are displayed they don't have to be evalutated.  To the next chunk I added
+the option \verb|eval=FALSE|
+<<chunk3, eval=FALSE>>=
+rnorm(1e6)
+@
+This code is evaluated, I just choose not to display the output:
+<<chunk4, results='hide'>>=
+5+5
+@
+And finally you might want your code to be evaluated but not displayed (useful for
+changing options without displaying in your document):
+<<chunk5, echo=FALSE>>=
+options(width=100)
+@
+
+\section{\LaTeX}
+
+\LaTeX itself is complicated if you've never used it before, but I'm sure you'll
+pick it up quickly: there are a lot of guides on the web.  I recommend using the
+\texttt{align} environment (in the \texttt{amsmath} package) for displayed equations:
+\begin{align*}
+% lose the *'s if you want equation numbers
+f(x) &= x^3 - x - 1\\
+g(y) &= y^4 + 2y
+\end{align*}
+
+You can cite in two ways using the \texttt{natbib} package:
+\citep{articlekey}
+and
+\citet{articlekey}.
+
+% now generate the bibliography from file mybib.bib
+\bibliographystyle{plainnat}
+\bibliography{mybib}
+
+
+\end{document}

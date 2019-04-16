@@ -1,0 +1,13 @@
+Package: HW
+Type: Package
+Title: Honglang Wang's Research Functions
+Version: 0.1.0
+Author: Honglang Wang
+Maintainer: Honglang Wang <wanghonglang2008@gmail.com>
+Description: R functions used in Honglang's research.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: knitr
+VignetteBuilder: knitr
+RoxygenNote: 6.1.1
